@@ -5,7 +5,7 @@ const HERO_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa
 const ELEPHANT_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/b9988101-71aa-41dc-9a8c-d4538f335604.jpg";
 const CAPETOWN_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/acdb17c2-4cd7-4ffb-af60-5a406c1f94bb.jpg";
 
-const NAV_LINKS = ["Главная", "Блог", "Видео", "Галерея", "Контакты"];
+const NAV_LINKS = ["Главная", "Блог", "Видео", "Галерея", "GeoSafe SA", "Контакты"];
 
 const BLOG_POSTS = [
   {
@@ -71,6 +71,7 @@ const Index = () => {
     Блог: "blog",
     Видео: "video",
     Галерея: "gallery",
+    "GeoSafe SA": "geosafe",
     Контакты: "contact",
   };
 
@@ -389,6 +390,160 @@ const Index = () => {
           <button className="border border-primary text-primary px-8 py-3 rounded font-heading uppercase tracking-wide text-sm hover:bg-primary hover:text-primary-foreground transition-all">
             Вся галерея
           </button>
+        </div>
+      </section>
+
+      {/* GEOSAFE SA */}
+      <section id="geosafe" className="bg-card border-y border-border py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: text */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 text-primary px-4 py-1.5 rounded-full text-xs font-heading uppercase tracking-widest mb-6">
+                <Icon name="Cpu" size={12} />
+                Искусственный интеллект
+              </div>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground uppercase leading-tight mb-4">
+                GeoSafe <span className="text-primary">SA</span>
+              </h2>
+              <p className="text-muted-foreground font-heading text-lg uppercase tracking-wide mb-3">
+                Инновационная карта-навигатор
+              </p>
+              <p className="text-muted-foreground font-body leading-relaxed mb-8">
+                Умный ИИ-помощник для путешествий по Южной Африке. GeoSafe SA анализирует маршруты в реальном времени, предупреждает об опасных зонах, рекомендует безопасные дороги и лучшие точки для наблюдения за дикой природой.
+              </p>
+              <div className="space-y-4 mb-10">
+                {[
+                  { icon: "Shield" as const, title: "Безопасность маршрута", desc: "ИИ анализирует криминогенную обстановку и предлагает безопасные альтернативы" },
+                  { icon: "Navigation" as const, title: "Умная навигация", desc: "Офлайн-карты, точки заправок, сафари-лоджи и КПП заповедников" },
+                  { icon: "Binoculars" as const, title: "Дикая природа", desc: "Актуальные данные о миграции животных и лучших точках наблюдения" },
+                  { icon: "Zap" as const, title: "Реальное время", desc: "Дорожные условия, паводки, закрытые дороги — обновления каждые 15 минут" },
+                ].map((f) => (
+                  <div key={f.title} className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon name={f.icon} size={16} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-heading text-sm font-semibold text-foreground uppercase tracking-wide">{f.title}</div>
+                      <div className="text-xs text-muted-foreground font-body mt-0.5 leading-relaxed">{f.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://t.me/yoursouthafricachannel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded font-heading font-semibold uppercase tracking-wide text-sm hover:bg-primary/90 transition-all hover:scale-105"
+                >
+                  <Icon name="Send" size={15} />
+                  Попробовать в Telegram
+                </a>
+                <button className="inline-flex items-center gap-2 border border-border text-muted-foreground px-6 py-3 rounded font-heading uppercase tracking-wide text-sm hover:border-primary hover:text-primary transition-colors">
+                  <Icon name="Info" size={15} />
+                  Подробнее
+                </button>
+              </div>
+            </div>
+
+            {/* Right: mock map UI */}
+            <div className="relative">
+              <div className="relative bg-background rounded-xl border border-border overflow-hidden shadow-2xl">
+                {/* Map header */}
+                <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-primary flex items-center justify-center">
+                      <Icon name="Map" size={12} className="text-primary-foreground" />
+                    </div>
+                    <span className="font-heading text-xs font-bold uppercase tracking-wider text-foreground">GeoSafe SA</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-xs text-muted-foreground font-body">Live</span>
+                  </div>
+                </div>
+
+                {/* Fake map grid */}
+                <div className="relative h-72 bg-[#1a2332] overflow-hidden">
+                  {/* Grid lines */}
+                  <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D97706" strokeWidth="0.5"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                  </svg>
+
+                  {/* Roads */}
+                  <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 0 140 Q 150 100 300 140 T 600 130" stroke="#D97706" strokeWidth="3" fill="none" strokeOpacity="0.6" />
+                    <path d="M 100 0 Q 120 100 140 290" stroke="#92400E" strokeWidth="2" fill="none" strokeOpacity="0.5" />
+                    <path d="M 300 0 Q 280 80 320 180 Q 350 250 310 290" stroke="#92400E" strokeWidth="2" fill="none" strokeOpacity="0.4" />
+                    <path d="M 0 200 Q 200 180 400 220 T 700 200" stroke="#4D7C0F" strokeWidth="1.5" fill="none" strokeOpacity="0.4" />
+                  </svg>
+
+                  {/* Zone overlays */}
+                  <div className="absolute top-6 left-8 w-24 h-16 rounded-lg bg-green-500/15 border border-green-500/40 flex items-center justify-center">
+                    <span className="text-green-400 text-xs font-heading uppercase tracking-wide">Безопасно</span>
+                  </div>
+                  <div className="absolute bottom-10 right-12 w-20 h-14 rounded-lg bg-red-500/15 border border-red-500/40 flex items-center justify-center">
+                    <span className="text-red-400 text-xs font-heading uppercase tracking-wide">Риск</span>
+                  </div>
+                  <div className="absolute top-16 right-24 w-18 h-12 rounded-lg bg-yellow-500/15 border border-yellow-500/40 flex items-center justify-center px-2">
+                    <span className="text-yellow-400 text-xs font-heading uppercase tracking-wide">Внимание</span>
+                  </div>
+
+                  {/* Pins */}
+                  <div className="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 animate-bounce">
+                    <div className="w-7 h-7 rounded-full bg-primary border-2 border-white flex items-center justify-center shadow-lg">
+                      <Icon name="MapPin" size={14} className="text-primary-foreground" />
+                    </div>
+                    <div className="text-[10px] text-white font-heading bg-black/60 px-2 py-0.5 rounded whitespace-nowrap">Крюгер НП</div>
+                  </div>
+                  <div className="absolute bottom-14 left-16 flex flex-col items-center gap-0.5">
+                    <div className="w-5 h-5 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center shadow">
+                      <Icon name="Flag" size={10} className="text-white" />
+                    </div>
+                    <div className="text-[9px] text-white font-heading bg-black/60 px-1.5 py-0.5 rounded">Йоханнесбург</div>
+                  </div>
+                  <div className="absolute top-1/2 right-8 flex flex-col items-center gap-0.5">
+                    <div className="w-5 h-5 rounded-full bg-green-500 border-2 border-white flex items-center justify-center shadow">
+                      <Icon name="Camera" size={10} className="text-white" />
+                    </div>
+                    <div className="text-[9px] text-white font-heading bg-black/60 px-1.5 py-0.5 rounded">Фототочка</div>
+                  </div>
+                </div>
+
+                {/* AI status bar */}
+                <div className="px-4 py-3 border-t border-border bg-muted">
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0">
+                      <Icon name="Bot" size={14} className="text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-xs text-foreground font-body">
+                        <span className="text-primary font-semibold">ИИ GeoSafe:</span> Маршрут через N4 безопасен. Слоны замечены у Phalaborwa Gate 🐘
+                      </div>
+                      <div className="flex gap-1 mt-1.5">
+                        {["Объехать", "Подробнее", "Сохранить"].map((btn) => (
+                          <button key={btn} className="text-[10px] bg-background border border-border text-muted-foreground px-2 py-0.5 rounded font-heading uppercase tracking-wide hover:border-primary hover:text-primary transition-colors">
+                            {btn}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-xl font-heading text-xs font-bold uppercase tracking-wide rotate-3">
+                Beta · Скоро
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
