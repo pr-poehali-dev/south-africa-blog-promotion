@@ -2119,7 +2119,7 @@ const Index = () => {
             Присоединяйся к экспедиции
           </h2>
           <p className="text-white/70 font-body text-lg mb-8 leading-relaxed">
-            В Telegram-канале — эксклюзивные фото, истории с маршрутов и советы для путешественников. Уже 15 000 подписчиков!
+            В Telegram-канале — эксклюзивные фото, истории с маршрутов и советы для путешественников.
           </p>
           <a
             href="https://t.me/+qvKkxOoiCLZkMWEy"
