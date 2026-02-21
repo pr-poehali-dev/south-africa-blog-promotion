@@ -1302,6 +1302,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* RENTAL */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="mb-12 text-center">
+          <p className="text-primary font-heading uppercase tracking-widest text-sm mb-3">Для путешественников</p>
+          <h2 className="section-heading font-heading text-4xl md:text-5xl font-bold text-foreground uppercase">
+            Аренда в ЮАР
+          </h2>
+          <p className="mt-4 text-muted-foreground font-body max-w-xl mx-auto">Нужна машина или жильё? Обратитесь к администратору нашего Telegram-чата — помогут найти лучший вариант.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {[
+            {
+              icon: "Car" as const,
+              emoji: "🚗",
+              title: "Аренда автомобиля",
+              desc: "Подберём машину под ваш маршрут: седан для города, внедорожник для Крюгера или минивэн для большой компании. Проверенные партнёры, честные цены.",
+              items: ["Седаны и кроссоверы", "Полноприводные внедорожники", "Страховка включена", "Прокат от 1 дня"],
+            },
+            {
+              icon: "Home" as const,
+              emoji: "🏡",
+              title: "Аренда жилья",
+              desc: "Квартиры, гостевые дома и виллы в Кейптауне, Йоханнесбурге, Дурбане и у заповедников. Помогаем найти то, что подходит под ваш бюджет и даты.",
+              items: ["Апартаменты в центре городов", "Гостевые дома у заповедников", "Виллы у океана", "Краткосрочная и долгосрочная аренда"],
+            },
+          ].map((card, i) => (
+            <div key={i} className="bg-card border border-border rounded-xl p-6 flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-2xl">
+                  {card.emoji}
+                </div>
+                <h3 className="font-heading font-bold text-foreground uppercase text-lg">{card.title}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">{card.desc}</p>
+              <ul className="space-y-2">
+                {card.items.map((item, j) => (
+                  <li key={j} className="flex items-center gap-2 text-xs text-muted-foreground font-body">
+                    <Icon name="Check" size={13} className="text-primary flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://t.me/+qvKkxOoiCLZkMWEy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded font-heading font-semibold uppercase tracking-wide text-sm hover:bg-primary/90 transition-all hover:scale-105"
+              >
+                <Icon name="Send" size={15} />
+                Написать администратору
+              </a>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-xs text-muted-foreground font-body mt-8">
+          Напишите в чат и укажите даты, город и тип транспорта / жилья — ответим в течение нескольких часов.
+        </p>
+      </section>
+
       {/* TELEGRAM CTA */}
       <section className="relative overflow-hidden py-24">
         <img src={CAPETOWN_IMG} alt="Кейптаун" className="absolute inset-0 w-full h-full object-cover" />
