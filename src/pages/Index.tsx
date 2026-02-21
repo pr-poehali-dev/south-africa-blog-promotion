@@ -106,7 +106,7 @@ const Index = () => {
               </button>
             ))}
             <a
-              href="https://t.me/yoursouthafricachannel"
+              href="https://t.me/+qvKkxOoiCLZkMWEy"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded text-sm font-heading font-semibold uppercase tracking-wide hover:bg-primary/90 transition-colors"
@@ -133,7 +133,7 @@ const Index = () => {
               </button>
             ))}
             <a
-              href="https://t.me/yoursouthafricachannel"
+              href="https://t.me/+qvKkxOoiCLZkMWEy"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded text-sm font-heading font-semibold uppercase tracking-wide w-full justify-center"
@@ -173,7 +173,7 @@ const Index = () => {
               Читать блог
             </button>
             <a
-              href="https://t.me/yoursouthafricachannel"
+              href="https://t.me/+qvKkxOoiCLZkMWEy"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-3.5 rounded font-heading font-semibold uppercase tracking-wide text-sm hover:bg-white/10 transition-all"
@@ -338,7 +338,7 @@ const Index = () => {
             {[
               { name: "YouTube", icon: "Youtube" as const, href: "https://youtube.com/@yourchannel", color: "bg-red-600", emoji: "", count: "120 видео" },
               { name: "TikTok", icon: "" as const, href: "https://tiktok.com/@youraccount", emoji: "🎵", color: "bg-black", count: "85 роликов" },
-              { name: "Telegram", icon: "Send" as const, href: "https://t.me/yoursouthafricachannel", color: "bg-blue-500", emoji: "", count: "15K подписчиков" },
+              { name: "Telegram", icon: "Send" as const, href: "https://t.me/+qvKkxOoiCLZkMWEy", color: "bg-blue-500", emoji: "", count: "15K подписчиков" },
               { name: "Instagram", icon: "Instagram" as const, href: "https://instagram.com/youraccount", color: "bg-gradient-to-br from-purple-600 to-orange-400", emoji: "", count: "8K подписчиков" },
             ].map((p) => (
               <a
@@ -548,7 +548,7 @@ const Index = () => {
             В Telegram-канале — эксклюзивные фото, истории с маршрутов и советы для путешественников. Уже 15 000 подписчиков!
           </p>
           <a
-            href="https://t.me/yoursouthafricachannel"
+            href="https://t.me/+qvKkxOoiCLZkMWEy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 rounded font-heading font-bold uppercase tracking-widest text-sm hover:bg-primary/90 transition-all hover:scale-105"
@@ -575,7 +575,7 @@ const Index = () => {
               </p>
               <div className="space-y-5">
                 {[
-                  { icon: "Send" as const, label: "Telegram", value: "@yoursouthafricachannel", href: "https://t.me/yoursouthafricachannel" },
+                  { icon: "Send" as const, label: "Telegram", value: "@yoursouthafricachannel", href: "https://t.me/+qvKkxOoiCLZkMWEy" },
                   { icon: "Youtube" as const, label: "YouTube", value: "Wild South Africa", href: "https://youtube.com" },
                   { icon: "Mail" as const, label: "Email", value: "hello@wildsouthafrica.ru", href: "mailto:hello@wildsouthafrica.ru" },
                 ].map((c) => (
@@ -665,7 +665,7 @@ const Index = () => {
           </p>
           <div className="flex items-center gap-4">
             {[
-              { icon: "Send" as const, href: "https://t.me/yoursouthafricachannel" },
+              { icon: "Send" as const, href: "https://t.me/+qvKkxOoiCLZkMWEy" },
               { icon: "Youtube" as const, href: "https://youtube.com" },
               { icon: "Instagram" as const, href: "https://instagram.com" },
             ].map((s, i) => (
