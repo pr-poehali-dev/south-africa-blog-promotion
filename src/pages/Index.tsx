@@ -873,6 +873,18 @@ const Index = () => {
                   return <p key={i}>{para}</p>;
                 })}
               </div>
+              <div className="mt-8 pt-6 border-t border-border flex items-center justify-between gap-4">
+                <span className="text-xs text-muted-foreground font-body">Понравилась статья? Поделись с друзьями!</span>
+                <a
+                  href={`https://t.me/share/url?url=https://t.me/+qvKkxOoiCLZkMWEy&text=${encodeURIComponent(openPost.title + "\n\n" + openPost.excerpt + "\n\nЧитай в канале Wild South Africa 🦁")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#229ED9] text-white px-5 py-2.5 rounded font-heading font-semibold uppercase tracking-wide text-xs hover:bg-[#1a8bbf] transition-all hover:scale-105 flex-shrink-0"
+                >
+                  <Icon name="Send" size={14} />
+                  Поделиться в Telegram
+                </a>
+              </div>
             </div>
           </div>
         </div>
