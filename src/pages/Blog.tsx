@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e4ac2b08-3aae-426d-8a8d-5a22b4314c54.jpg";
@@ -685,11 +685,37 @@ const TAGS = ["Все", ...Array.from(new Set(ALL_POSTS.map((p) => p.tag)))];
 
 type Post = typeof ALL_POSTS[0];
 
+function toSlug(title: string) {
+  return encodeURIComponent(title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-zа-я0-9-]/gi, ""));
+}
+
+function fromSlug(slug: string) {
+  return ALL_POSTS.find((p) => toSlug(p.title) === slug) || null;
+}
+
 export default function Blog() {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [tag, setTag] = useState("Все");
-  const [openPost, setOpenPost] = useState<Post | null>(null);
   const [search, setSearch] = useState("");
+
+  const openPost = searchParams.get("post") ? fromSlug(searchParams.get("post")!) : null;
+
+  const setOpenPost = useCallback((post: Post | null) => {
+    if (post) {
+      setSearchParams({ post: toSlug(post.title) });
+    } else {
+      setSearchParams({});
+    }
+  }, [setSearchParams]);
+
+  const [copied, setCopied] = useState(false);
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const filtered = ALL_POSTS.filter((p) => {
     const matchTag = tag === "Все" || p.tag === tag;
@@ -710,7 +736,7 @@ export default function Blog() {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpenPost(null); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [openPost]);
+  }, [openPost, setOpenPost]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -860,17 +886,38 @@ export default function Blog() {
                   return <p key={i}>{para}</p>;
                 })}
               </div>
-              <div className="mt-8 pt-6 border-t border-border flex items-center justify-between gap-4">
-                <span className="text-xs text-muted-foreground font-body">Понравилась статья? Поделись с друзьями!</span>
-                <a
-                  href={`https://t.me/share/url?url=https://t.me/+qvKkxOoiCLZkMWEy&text=${encodeURIComponent(openPost.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#229ED9] text-white px-5 py-2.5 rounded font-heading font-semibold uppercase tracking-wide text-xs hover:bg-[#1a8bbf] transition-all flex-shrink-0"
-                >
-                  <Icon name="Send" size={14} />
-                  Поделиться
-                </a>
+              <div className="mt-8 pt-6 border-t border-border space-y-3">
+                <p className="text-xs text-muted-foreground font-body">Понравилась статья? Поделись с друзьями!</p>
+                <div className="flex flex-wrap items-center gap-2">
+                  {/* Copy link */}
+                  <button
+                    onClick={copyLink}
+                    className="inline-flex items-center gap-2 bg-muted border border-border text-foreground px-4 py-2 rounded font-heading font-semibold uppercase tracking-wide text-xs hover:border-primary transition-all"
+                  >
+                    <Icon name={copied ? "Check" : "Link"} size={13} />
+                    {copied ? "Ссылка скопирована!" : "Копировать ссылку"}
+                  </button>
+                  {/* Telegram */}
+                  <a
+                    href={`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(openPost.title + "\n\n" + openPost.excerpt)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#229ED9] text-white px-4 py-2 rounded font-heading font-semibold uppercase tracking-wide text-xs hover:bg-[#1a8bbf] transition-all"
+                  >
+                    <Icon name="Send" size={13} />
+                    Telegram
+                  </a>
+                  {/* WhatsApp */}
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(openPost.title + "\n" + window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded font-heading font-semibold uppercase tracking-wide text-xs hover:bg-[#1ebe5d] transition-all"
+                  >
+                    <Icon name="MessageCircle" size={13} />
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </div>
