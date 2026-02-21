@@ -706,9 +706,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { icon: "BookOpen" as const, value: "48+", label: "Статей в блоге" },
-            { icon: "Video" as const, value: "120+", label: "Видео на YouTube" },
+            { icon: "Video" as const, value: "—", label: "YouTube в разработке" },
             { icon: "Camera" as const, value: "2000+", label: "Фото в галерее" },
-            { icon: "Users" as const, value: "15K+", label: "Подписчиков" },
+            { icon: "Users" as const, value: "1000+", label: "Подписчиков" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <Icon name={s.icon} size={22} className="text-primary mx-auto mb-2" />
@@ -1034,16 +1034,16 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* YouTube embed */}
+            {/* YouTube — в разработке */}
             <div className="bg-background rounded-lg overflow-hidden border border-border card-hover">
-              <div className="relative aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="YouTube видео"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
+              <div className="relative aspect-video bg-muted flex flex-col items-center justify-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-red-600/20 flex items-center justify-center">
+                  <Icon name="Youtube" size={28} className="text-red-600" />
+                </div>
+                <div className="text-center px-4">
+                  <div className="font-heading text-sm font-semibold text-foreground uppercase mb-1">YouTube</div>
+                  <p className="text-muted-foreground text-xs font-body">Раздел в разработке. Скоро здесь появятся видео из наших экспедиций.</p>
+                </div>
               </div>
               <div className="p-4 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0">
@@ -1051,16 +1051,8 @@ const Index = () => {
                 </div>
                 <div>
                   <div className="font-heading text-sm font-semibold text-foreground uppercase">YouTube</div>
-                  <div className="text-xs text-muted-foreground">Сафари в Крюгере — видео с маршрута</div>
+                  <div className="text-xs text-muted-foreground">Раздел в разработке</div>
                 </div>
-                <a
-                  href="https://youtube.com/@yourchannel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-auto text-xs bg-red-600 text-white px-3 py-1.5 rounded font-heading uppercase tracking-wide hover:bg-red-700 transition-colors"
-                >
-                  Подписаться
-                </a>
               </div>
             </div>
 
@@ -1104,10 +1096,9 @@ const Index = () => {
           {/* Platforms grid */}
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: "YouTube", icon: "Youtube" as const, href: "https://youtube.com/@yourchannel", color: "bg-red-600", emoji: "", count: "120 видео" },
+              { name: "YouTube", icon: "Youtube" as const, href: "#", color: "bg-red-600", emoji: "", count: "Раздел в разработке" },
               { name: "TikTok", icon: "" as const, href: "https://tiktok.com/@youraccount", emoji: "🎵", color: "bg-black", count: "85 роликов" },
-              { name: "Telegram", icon: "Send" as const, href: "https://t.me/+qvKkxOoiCLZkMWEy", color: "bg-blue-500", emoji: "", count: "15K подписчиков" },
-              { name: "Instagram", icon: "Instagram" as const, href: "https://instagram.com/youraccount", color: "bg-gradient-to-br from-purple-600 to-orange-400", emoji: "", count: "8K подписчиков" },
+              { name: "Telegram", icon: "Send" as const, href: "https://t.me/+qvKkxOoiCLZkMWEy", color: "bg-blue-500", emoji: "", count: "более 1000 подписчиков" },
             ].map((p) => (
               <a
                 key={p.name}
