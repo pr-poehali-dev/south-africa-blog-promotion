@@ -200,6 +200,105 @@ Boulders Beach — это небольшой пляж у городка Сайм
   },
 ];
 
+const JHB_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/5e9c5a31-846c-4c59-89ba-1cf62d25a8a1.jpg";
+const DBN_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/9f1c14b9-ab75-4b91-93a9-2e6b394f446d.jpg";
+const PTA_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/5f7bcf7e-b97d-4530-84be-d0dd2d7c0d7e.jpg";
+const PE_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/29a056d8-894f-40e0-9583-30965236d605.jpg";
+const STLBSCH_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/01fab410-4976-44e8-a43a-9792b083508b.jpg";
+const FRANSCH_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/cfdd82ce-fe19-415b-abb1-5213e76436be.jpg";
+const PAARL_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/867e9f19-5cf7-4dde-b921-0bbea33da5da.jpg";
+const CONSTANTIA_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/ee421650-8fe7-458d-831d-bff11bf80efa.jpg";
+
+const CITIES = [
+  {
+    name: "Кейптаун",
+    subtitle: "Мать городов",
+    img: CAPETOWN_IMG,
+    places: [
+      { img: CAPETOWN_IMG, name: "Столовая гора", desc: "Плоская вершина высотой 1086 м — символ города. Поднимайтесь на канатной дороге или пешком, вид сверху открывается на оба океана и весь полуостров." },
+      { img: WATERFRONT_IMG, name: "V&A Waterfront", desc: "Исторический порт, превращённый в лучшее общественное пространство страны. Рестораны, рынки, аквариум и яхты — всё это здесь у подножия горы." },
+      { img: BOKAAP_IMG, name: "Бо-Кап", desc: "Квартал ярких домов с историей малайских переселенцев. Лучший свет — ранним утром. Попробуйте местное блюдо bobotie в кафе Bo-Kaap Kombuis." },
+      { img: PENGUINS_IMG, name: "Пляж Боулдерс", desc: "Колония диких африканских пингвинов в 45 минутах от центра. Деревянные настилы позволяют подойти совсем близко к птицам." },
+      { img: CAPEPOINT_IMG, name: "Мыс Доброй Надежды", desc: "Скалы над двумя океанами на краю полуострова. Маяк, дикие павианы, пустые пляжи и ощущение конца земли." },
+    ],
+  },
+  {
+    name: "Йоханнесбург",
+    subtitle: "Золотой город",
+    img: JHB_IMG,
+    places: [
+      { img: JHB_IMG, name: "Соуэто", desc: "Легендарный южно-западный тауншип, родина Нельсона Манделы и Десмонда Туту. Дом-музей Манделы и мемориал Гектора Питерсена — обязательные точки." },
+      { img: JHB_IMG, name: "Конститьюшн Хилл", desc: "Бывшая тюрьма, где сидели Мандела и Ганди. Теперь здесь Конституционный суд ЮАР — одно из самых важных мест в истории страны." },
+      { img: JHB_IMG, name: "Maboneng", desc: "Арт-квартал с галереями, кафе и уличными муралами. Йоханнесбург меняется, и этот район — лучшее тому доказательство." },
+      { img: JHB_IMG, name: "Gold Reef City", desc: "Тематический парк на месте старой золотой шахты. Можно спуститься вниз и увидеть, как добывали золото в XIX веке." },
+    ],
+  },
+  {
+    name: "Дурбан",
+    subtitle: "Индийский океан у порога",
+    img: DBN_IMG,
+    places: [
+      { img: DBN_IMG, name: "Набережная uShaka", desc: "Длинная прогулочная набережная вдоль Индийского океана с парком развлечений, аквариумом и отличными волнами для сёрфинга." },
+      { img: DBN_IMG, name: "Индийский рынок", desc: "Одна из крупнейших азиатских торговых площадок за пределами Азии. Специи, шёлк, карри и запах, который невозможно забыть." },
+      { img: DBN_IMG, name: "Долина 1000 холмов", desc: "Живописные холмы к западу от Дурбана — земля народа зулу. Деревни, традиционные ремёсла и церемонии, которые сохранились до наших дней." },
+      { img: DBN_IMG, name: "North Beach", desc: "Главный городской пляж с тёплой водой Индийского океана круглый год. Сёрфинг, волейбол и знаменитые дурбанские рыбные чипсы." },
+    ],
+  },
+  {
+    name: "Претория",
+    subtitle: "Столица жакаранд",
+    img: PTA_IMG,
+    places: [
+      { img: PTA_IMG, name: "Юнион Билдингс", desc: "Величественный правительственный дворец на холме, перед которым стоит огромная статуя Нельсона Манделы. Панорама города с террасы — захватывающая." },
+      { img: PTA_IMG, name: "Улицы жакаранды", desc: "В ноябре весь город утопает в фиолетовом цвету жакарандовых деревьев. Это одно из самых красивых природных зрелищ в ЮАР — приезжайте именно в это время." },
+      { img: PTA_IMG, name: "Церковная площадь", desc: "Исторический центр Претории с памятником Паулю Крюгеру, Дворцом правосудия и старинными зданиями эпохи бурских республик." },
+      { img: PTA_IMG, name: "Музей Воортреккер", desc: "Монументальный музей, посвящённый Великому Треку — переселению буров вглубь Африки в XIX веке. Грандиозная архитектура и важная история страны." },
+    ],
+  },
+  {
+    name: "Порт-Элизабет",
+    subtitle: "Дружелюбный город",
+    img: PE_IMG,
+    places: [
+      { img: PE_IMG, name: "Бухта Алгоа", desc: "Живописная бухта с белым песком и чистой водой — финальная точка Садового маршрута. Отличное место для дайвинга и кайтсёрфинга." },
+      { img: PE_IMG, name: "Заповедник Addo Elephant", desc: "Ближайший к городу заповедник с самой высокой плотностью слонов в мире. Однодневный выезд из Порт-Элизабет — и вы в дикой Африке." },
+      { img: PE_IMG, name: "Пляж Хаммондс", desc: "Тихий городской пляж с деревянным причалом. Местные рыбаки ловят рыбу прямо с него на закате — это очень красиво и атмосферно." },
+      { img: PE_IMG, name: "Маяк Донкин", desc: "Исторический маяк 1861 года на холме над городом с пирамидой в память о жене первого губернатора. Вид на всю бухту Алгоа." },
+    ],
+  },
+];
+
+const WINERIES = [
+  {
+    img: STLBSCH_IMG,
+    name: "Стелленбос",
+    region: "Западный Кейп",
+    title: "Стелленбос: винная столица ЮАР",
+    desc: "Город в 50 км от Кейптауна — центр южноафриканского виноделия. Более 150 винодельческих хозяйств, дубовые улицы и голландская архитектура XVIII века. Попробуйте Pinotage — это исключительно южноафриканский сорт винограда, выведенный именно здесь.",
+  },
+  {
+    img: FRANSCH_IMG,
+    name: "Франшхук",
+    region: "Западный Кейп",
+    title: "Франшхук: французская деревня в Африке",
+    desc: "Основан французскими гугенотами в 1688 году. Долина окружена горами и виноградниками. Здесь находятся одни из лучших ресторанов страны и такие поместья, как Haute Cabrière и La Motte. Также работает знаменитый Wine Tram — трамвай, объезжающий фермы.",
+  },
+  {
+    img: PAARL_IMG,
+    name: "Патл",
+    region: "Западный Кейп",
+    title: "Патл: гранитные скалы и старые подвалы",
+    desc: "Третий старейший город ЮАР, раскинувшийся у подножия гранитных скал. Здесь находится KWV — один из крупнейших винных кооперативов мира, и знаменитое Fairview с козьим сыром и отличными красными винами.",
+  },
+  {
+    img: CONSTANTIA_IMG,
+    name: "Константия",
+    region: "Кейптаун",
+    title: "Константия: старейшая винодельня Африки",
+    desc: "Долина Константия — самый старый винный регион ЮАР, в 20 минутах от центра Кейптауна. Groot Constantia была основана в 1685 году — здесь хранятся вина, которые пил сам Наполеон в ссылке на острове Святой Елены.",
+  },
+];
+
 const GALLERY_IMGS = [HERO_IMG, ELEPHANT_IMG, CAPETOWN_IMG, HERO_IMG, ELEPHANT_IMG, CAPETOWN_IMG];
 
 const VIDEOS = [
@@ -222,6 +321,7 @@ const VIDEOS = [
 ];
 
 type BlogPost = typeof BLOG_POSTS[0];
+type City = typeof CITIES[0];
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("Главная");
@@ -231,6 +331,7 @@ const Index = () => {
   const [contactMsg, setContactMsg] = useState("");
   const [sent, setSent] = useState(false);
   const [openPost, setOpenPost] = useState<BlogPost | null>(null);
+  const [openCity, setOpenCity] = useState<City | null>(null);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -381,6 +482,67 @@ const Index = () => {
           ))}
         </div>
       </div>
+
+      {/* CITIES */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="mb-12">
+          <p className="text-primary font-heading uppercase tracking-widest text-sm mb-3">Исследуй страну</p>
+          <h2 className="section-heading font-heading text-4xl md:text-5xl font-bold text-foreground uppercase">
+            Города ЮАР
+          </h2>
+          <p className="mt-4 text-muted-foreground font-body max-w-xl">Нажми на город — и откроются знаменитые места с фото и описаниями.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {CITIES.map((city, i) => (
+            <button
+              key={i}
+              onClick={() => setOpenCity(city)}
+              className="group relative rounded-xl overflow-hidden aspect-[3/4] cursor-pointer border border-border hover:border-primary transition-colors"
+            >
+              <img src={city.img} alt={city.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 text-left">
+                <div className="font-heading font-bold text-white uppercase text-sm leading-tight">{city.name}</div>
+                <div className="text-white/60 text-xs font-body mt-0.5">{city.subtitle}</div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
+                  <Icon name="ArrowRight" size={13} className="text-primary-foreground" />
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* WINERIES */}
+      <section className="bg-card border-y border-border py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-primary font-heading uppercase tracking-widest text-sm mb-3">Вино Африки</p>
+            <h2 className="section-heading font-heading text-4xl md:text-5xl font-bold text-foreground uppercase">
+              Винные регионы
+            </h2>
+            <p className="mt-4 text-muted-foreground font-body max-w-xl">ЮАР входит в топ-10 мировых производителей вина. Вот главные регионы, которые стоит посетить.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {WINERIES.map((w, i) => (
+              <div key={i} className="group flex gap-5 bg-background rounded-xl border border-border p-4 hover:border-primary transition-colors">
+                <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
+                  <img src={w.img} alt={w.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs bg-primary/15 text-primary font-heading uppercase tracking-wide px-2 py-0.5 rounded">{w.region}</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground uppercase text-sm leading-tight mb-2">{w.title}</h3>
+                  <p className="text-xs text-muted-foreground font-body leading-relaxed line-clamp-4">{w.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* BLOG */}
       <section id="blog" className="max-w-7xl mx-auto px-6 py-24">
@@ -828,6 +990,53 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* CITY MODAL */}
+      {openCity && (
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-4"
+          onClick={() => setOpenCity(null)}
+        >
+          <div
+            className="relative bg-card rounded-xl border border-border max-w-2xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative h-56 overflow-hidden rounded-t-xl">
+              <img src={openCity.img} alt={openCity.name} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <button
+                onClick={() => setOpenCity(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+              >
+                <Icon name="X" size={18} />
+              </button>
+              <div className="absolute bottom-4 left-5">
+                <h2 className="font-heading text-3xl font-bold text-white uppercase">{openCity.name}</h2>
+                <p className="text-white/70 text-sm font-body">{openCity.subtitle}</p>
+              </div>
+            </div>
+            <div className="p-6">
+              <p className="text-xs text-muted-foreground font-heading uppercase tracking-widest mb-5">Знаменитые места</p>
+              <div className="space-y-4">
+                {openCity.places.map((place, i) => (
+                  <div key={i} className="flex gap-4 group">
+                    <div className="relative w-24 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+                      <img src={place.img} alt={place.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Icon name="MapPin" size={12} className="text-primary flex-shrink-0" />
+                        <h3 className="font-heading font-bold text-foreground uppercase text-sm">{place.name}</h3>
+                      </div>
+                      <p className="text-xs text-muted-foreground font-body leading-relaxed">{place.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* BLOG MODAL */}
       {openPost && (
