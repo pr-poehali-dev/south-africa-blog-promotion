@@ -11,7 +11,7 @@ const CAPEPOINT_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-
 const LION_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/939c17fa-9f72-48a5-af65-83328c3336d7.jpg";
 const GARDENROUTE_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/2e2b4e11-37d8-4d01-83c2-905f2e60c177.jpg";
 
-const NAV_LINKS = ["Главная", "Блог", "Видео", "Галерея", "GeoSafe SA", "Контакты"];
+const NAV_LINKS = ["Главная", "Блог", "Видео", "Галерея", "FAQ", "GeoSafe SA", "Контакты"];
 
 const BLOG_POSTS = [
   {
@@ -575,6 +575,7 @@ const Index = () => {
   const sectionMap: Record<string, string> = {
     Главная: "hero",
     Блог: "blog",
+    FAQ: "faq",
     Видео: "video",
     Галерея: "gallery",
     "GeoSafe SA": "geosafe",
@@ -923,7 +924,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
+      <section id="faq" className="max-w-4xl mx-auto px-6 py-24">
         <div className="mb-12 text-center">
           <p className="text-primary font-heading uppercase tracking-widest text-sm mb-3">Вопросы и ответы</p>
           <h2 className="section-heading font-heading text-4xl md:text-5xl font-bold text-foreground uppercase">
