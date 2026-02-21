@@ -565,6 +565,7 @@ const Index = () => {
   const [openCity, setOpenCity] = useState<City | null>(null);
   const [openPark, setOpenPark] = useState<typeof PARKS[0] | null>(null);
   const [openWinery, setOpenWinery] = useState<typeof WINERIES[0] | null>(null);
+  const [openPlace, setOpenPlace] = useState<{ img: string; name: string; desc: string } | null>(null);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -1541,6 +1542,58 @@ const Index = () => {
         </div>
       )}
 
+      {/* PLACE MODAL */}
+      {openPlace && (
+        <div
+          className="fixed inset-0 z-[60] flex items-start justify-center bg-black/80 backdrop-blur-sm overflow-y-auto py-8 px-4"
+          onClick={() => setOpenPlace(null)}
+        >
+          <div
+            className="relative bg-card rounded-xl border border-border max-w-xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative h-72 overflow-hidden rounded-t-xl">
+              <img src={openPlace.img} alt={openPlace.name} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <button
+                onClick={() => setOpenPlace(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+              >
+                <Icon name="X" size={18} />
+              </button>
+              <button
+                onClick={() => setOpenPlace(null)}
+                className="absolute top-4 left-4 flex items-center gap-1.5 text-white/80 hover:text-white text-xs font-heading uppercase tracking-wide transition-colors"
+              >
+                <Icon name="ChevronLeft" size={14} />
+                Назад к городу
+              </button>
+              <div className="absolute bottom-4 left-5 right-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Icon name="MapPin" size={14} className="text-primary" />
+                  <h2 className="font-heading text-2xl font-bold text-white uppercase">{openPlace.name}</h2>
+                </div>
+              </div>
+            </div>
+            <div className="p-6">
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">{openPlace.desc}</p>
+              <div className="mt-6 pt-5 border-t border-border flex items-center justify-between gap-4">
+                <span className="text-xs text-muted-foreground font-body">Поделись с друзьями!</span>
+                <a
+                  href={`https://t.me/share/url?url=https://t.me/+qvKkxOoiCLZkMWEy&text=${encodeURIComponent(openPlace.name + "\n\n" + openPlace.desc + "\n\nПодробнее в канале Wild South Africa 🦁")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#229ED9] text-white px-5 py-2.5 rounded font-heading font-semibold uppercase tracking-wide text-xs hover:bg-[#1a8bbf] transition-all hover:scale-105 flex-shrink-0"
+                >
+                  <Icon name="Send" size={14} />
+                  Поделиться
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* CITY MODAL */}
       {openCity && (
         <div
@@ -1566,21 +1619,28 @@ const Index = () => {
               </div>
             </div>
             <div className="p-6">
-              <p className="text-xs text-muted-foreground font-heading uppercase tracking-widest mb-5">Знаменитые места</p>
-              <div className="space-y-4">
+              <p className="text-xs text-muted-foreground font-heading uppercase tracking-widest mb-5">Нажми на место, чтобы узнать подробнее</p>
+              <div className="grid grid-cols-1 gap-3">
                 {openCity.places.map((place, i) => (
-                  <div key={i} className="flex gap-4 group">
-                    <div className="relative w-24 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+                  <button
+                    key={i}
+                    onClick={() => setOpenPlace(place)}
+                    className="flex gap-4 group text-left rounded-xl border border-border hover:border-primary bg-background hover:bg-primary/5 transition-all p-3 cursor-pointer"
+                  >
+                    <div className="relative w-28 h-24 flex-shrink-0 rounded-lg overflow-hidden">
                       <img src={place.img} alt={place.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1.5">
                         <Icon name="MapPin" size={12} className="text-primary flex-shrink-0" />
-                        <h3 className="font-heading font-bold text-foreground uppercase text-sm">{place.name}</h3>
+                        <h3 className="font-heading font-bold text-foreground uppercase text-sm group-hover:text-primary transition-colors">{place.name}</h3>
                       </div>
-                      <p className="text-xs text-muted-foreground font-body leading-relaxed">{place.desc}</p>
+                      <p className="text-xs text-muted-foreground font-body leading-relaxed line-clamp-3">{place.desc}</p>
+                      <span className="inline-flex items-center gap-1 text-primary text-xs font-heading uppercase tracking-wide mt-2">
+                        Подробнее <Icon name="ArrowRight" size={11} />
+                      </span>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
