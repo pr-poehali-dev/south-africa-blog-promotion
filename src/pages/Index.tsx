@@ -7,6 +7,9 @@ const CAPETOWN_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-4
 const WATERFRONT_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e9ca5616-786f-4cd2-87ab-0235739e3818.jpg";
 const BOKAAP_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/02e1a9db-2ecf-465e-aa8b-da8d0c1be22d.jpg";
 const PENGUINS_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e4169764-f4bb-4d7f-b6f1-304c79257ed0.jpg";
+const CAPEPOINT_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/c3ee904f-7e6c-43f9-b487-f6c0ec3dc0f0.jpg";
+const LION_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/939c17fa-9f72-48a5-af65-83328c3336d7.jpg";
+const GARDENROUTE_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/2e2b4e11-37d8-4d01-83c2-905f2e60c177.jpg";
 
 const NAV_LINKS = ["Главная", "Блог", "Видео", "Галерея", "GeoSafe SA", "Контакты"];
 
@@ -52,6 +55,27 @@ const BLOG_POSTS = [
     date: "28 янв 2026",
     title: "Пляж Боулдерс: пингвины в получасе от мегаполиса",
     excerpt: "Африканские пингвины в дикой природе — звучит невероятно, но это реальность полуострова Кейп-Пойнт. Как добраться и что взять с собой.",
+  },
+  {
+    img: CAPEPOINT_IMG,
+    tag: "Природа",
+    date: "15 янв 2026",
+    title: "Мыс Доброй Надежды: на краю двух океанов",
+    excerpt: "Здесь Атлантика встречается с Индийским океаном. Скалы, ветер и ощущение, что ты на краю земли — репортаж с самой южной точки Африки.",
+  },
+  {
+    img: LION_IMG,
+    tag: "Дикая природа",
+    date: "8 янв 2026",
+    title: "Крюгер: как увидеть льва в первый день сафари",
+    excerpt: "Личный маршрут по национальному парку — от ворот Пунда Мария до лагеря Сатара. Где останавливаться, когда выезжать и как не пропустить закат.",
+  },
+  {
+    img: GARDENROUTE_IMG,
+    tag: "Маршруты",
+    date: "3 янв 2026",
+    title: "Садовый маршрут: 5 дней вдоль берега Индийского океана",
+    excerpt: "От Кейптауна до Порт-Элизабет по самой живописной дороге ЮАР. Леса, лагуны, водопады и маленькие городки — идеальный роад-трип.",
   },
 ];
 
