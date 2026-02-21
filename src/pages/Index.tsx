@@ -798,6 +798,110 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TRAVEL INFO */}
+      <section className="bg-card border-y border-border py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-primary font-heading uppercase tracking-widest text-sm mb-3">Перед поездкой</p>
+            <h2 className="section-heading font-heading text-4xl md:text-5xl font-bold text-foreground uppercase">
+              Практическая информация
+            </h2>
+            <p className="mt-4 text-muted-foreground font-body max-w-xl">Всё, что нужно знать туристу перед поездкой в ЮАР.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "FileText" as const,
+                title: "Виза",
+                color: "text-blue-400",
+                bg: "bg-blue-400/10 border-blue-400/30",
+                items: [
+                  "Россиянам виза не нужна — въезд на 30 дней по загранпаспорту",
+                  "Паспорт должен быть действителен минимум 30 дней после выезда",
+                  "Требуется 2 пустые страницы для штампов",
+                  "Обратный или транзитный билет обязателен",
+                ],
+              },
+              {
+                icon: "Banknote" as const,
+                title: "Валюта и деньги",
+                color: "text-green-400",
+                bg: "bg-green-400/10 border-green-400/30",
+                items: [
+                  "Валюта — южноафриканский рэнд (ZAR). 1 USD ≈ 18–19 ZAR",
+                  "Карты Visa/Mastercard принимают везде в городах",
+                  "Банкоматы доступны во всех крупных городах и торговых центрах",
+                  "В заповедниках и маленьких городках лучше иметь наличные",
+                ],
+              },
+              {
+                icon: "Shield" as const,
+                title: "Безопасность",
+                color: "text-red-400",
+                bg: "bg-red-400/10 border-red-400/30",
+                items: [
+                  "ЮАР — страна контрастов, уровень преступности высокий в крупных городах",
+                  "Не ходите пешком ночью в незнакомых районах",
+                  "Не демонстрируйте ценности и дорогую технику на улице",
+                  "Туристические зоны безопаснее — следите за обстановкой",
+                ],
+              },
+              {
+                icon: "Thermometer" as const,
+                title: "Климат и сезоны",
+                color: "text-orange-400",
+                bg: "bg-orange-400/10 border-orange-400/30",
+                items: [
+                  "Лето (дек–фев): жарко +30°C, сезон дождей на востоке",
+                  "Осень (март–май): мягко, отличное время для сафари",
+                  "Зима (июнь–авг): сухой сезон — лучший для наблюдения за животными",
+                  "Кейптаун: лето сухое, зима дождливая — противоположно Крюгеру",
+                ],
+              },
+              {
+                icon: "Plane" as const,
+                title: "Перелёт",
+                color: "text-purple-400",
+                bg: "bg-purple-400/10 border-purple-400/30",
+                items: [
+                  "Прямых рейсов из России нет — пересадка в ОАЭ, Турции или Эфиопии",
+                  "Лучшие стыковки: Emirates через Дубай, Turkish через Стамбул",
+                  "Время в полёте с пересадкой — 14–18 часов",
+                  "Главный аэропорт — Йоханнесбург (OR Tambo), второй — Кейптаун",
+                ],
+              },
+              {
+                icon: "Heart" as const,
+                title: "Здоровье",
+                color: "text-pink-400",
+                bg: "bg-pink-400/10 border-pink-400/30",
+                items: [
+                  "В Крюгере и КваЗулу-Натале — риск малярии. Примите профилактику",
+                  "Страховка обязательна: медицина дорогая",
+                  "Солнцезащитный крем SPF50+ — обязателен круглый год",
+                  "Воду из-под крана в городах пить можно, в сельской местности — нет",
+                ],
+              },
+            ].map((card, i) => (
+              <div key={i} className={`rounded-xl border p-5 ${card.bg}`}>
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon name={card.icon} size={20} className={card.color} />
+                  <h3 className="font-heading font-bold text-foreground uppercase tracking-wide text-sm">{card.title}</h3>
+                </div>
+                <ul className="space-y-2">
+                  {card.items.map((item, j) => (
+                    <li key={j} className="flex gap-2 text-xs text-muted-foreground font-body leading-relaxed">
+                      <span className={`${card.color} mt-0.5 flex-shrink-0`}>•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* BLOG */}
       <section id="blog" className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-12">
