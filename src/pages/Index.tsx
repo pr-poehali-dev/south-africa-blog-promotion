@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e4ac2b08-3aae-426d-8a8d-5a22b4314c54.jpg";
@@ -555,6 +556,7 @@ type BlogPost = typeof BLOG_POSTS[0];
 type City = typeof CITIES[0];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("Главная");
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactName, setContactName] = useState("");
@@ -1146,7 +1148,11 @@ const Index = () => {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <button className="border border-primary text-primary px-8 py-3 rounded font-heading uppercase tracking-wide text-sm hover:bg-primary hover:text-primary-foreground transition-all">
+          <button
+            onClick={() => navigate("/gallery")}
+            className="border border-primary text-primary px-8 py-3 rounded font-heading uppercase tracking-wide text-sm hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center gap-2"
+          >
+            <Icon name="Images" size={16} />
             Вся галерея
           </button>
         </div>
