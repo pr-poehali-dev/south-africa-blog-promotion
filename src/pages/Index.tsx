@@ -492,56 +492,16 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Fake map grid */}
-                <div className="relative h-72 bg-[#1a2332] overflow-hidden">
-                  {/* Grid lines */}
-                  <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D97706" strokeWidth="0.5"/>
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                  </svg>
-
-                  {/* Roads */}
-                  <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0 140 Q 150 100 300 140 T 600 130" stroke="#D97706" strokeWidth="3" fill="none" strokeOpacity="0.6" />
-                    <path d="M 100 0 Q 120 100 140 290" stroke="#92400E" strokeWidth="2" fill="none" strokeOpacity="0.5" />
-                    <path d="M 300 0 Q 280 80 320 180 Q 350 250 310 290" stroke="#92400E" strokeWidth="2" fill="none" strokeOpacity="0.4" />
-                    <path d="M 0 200 Q 200 180 400 220 T 700 200" stroke="#4D7C0F" strokeWidth="1.5" fill="none" strokeOpacity="0.4" />
-                  </svg>
-
-                  {/* Zone overlays */}
-                  <div className="absolute top-6 left-8 w-24 h-16 rounded-lg bg-green-500/15 border border-green-500/40 flex items-center justify-center">
-                    <span className="text-green-400 text-xs font-heading uppercase tracking-wide">Безопасно</span>
-                  </div>
-                  <div className="absolute bottom-10 right-12 w-20 h-14 rounded-lg bg-red-500/15 border border-red-500/40 flex items-center justify-center">
-                    <span className="text-red-400 text-xs font-heading uppercase tracking-wide">Риск</span>
-                  </div>
-                  <div className="absolute top-16 right-24 w-18 h-12 rounded-lg bg-yellow-500/15 border border-yellow-500/40 flex items-center justify-center px-2">
-                    <span className="text-yellow-400 text-xs font-heading uppercase tracking-wide">Внимание</span>
-                  </div>
-
-                  {/* Pins */}
-                  <div className="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 animate-bounce">
-                    <div className="w-7 h-7 rounded-full bg-primary border-2 border-white flex items-center justify-center shadow-lg">
-                      <Icon name="MapPin" size={14} className="text-primary-foreground" />
-                    </div>
-                    <div className="text-[10px] text-white font-heading bg-black/60 px-2 py-0.5 rounded whitespace-nowrap">Крюгер НП</div>
-                  </div>
-                  <div className="absolute bottom-14 left-16 flex flex-col items-center gap-0.5">
-                    <div className="w-5 h-5 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center shadow">
-                      <Icon name="Flag" size={10} className="text-white" />
-                    </div>
-                    <div className="text-[9px] text-white font-heading bg-black/60 px-1.5 py-0.5 rounded">Йоханнесбург</div>
-                  </div>
-                  <div className="absolute top-1/2 right-8 flex flex-col items-center gap-0.5">
-                    <div className="w-5 h-5 rounded-full bg-green-500 border-2 border-white flex items-center justify-center shadow">
-                      <Icon name="Camera" size={10} className="text-white" />
-                    </div>
-                    <div className="text-[9px] text-white font-heading bg-black/60 px-1.5 py-0.5 rounded">Фототочка</div>
-                  </div>
+                {/* Video */}
+                <div className="relative bg-black overflow-hidden">
+                  <video
+                    src="https://ptfiles.storage.yandexcloud.net/pts-ai-video/video_40e92564-f01f-424e-bf35-be7e6b8db124.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full object-cover"
+                  />
                 </div>
 
                 {/* AI status bar */}
