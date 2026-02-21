@@ -4,6 +4,9 @@ import Icon from "@/components/ui/icon";
 const HERO_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e4ac2b08-3aae-426d-8a8d-5a22b4314c54.jpg";
 const ELEPHANT_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/b9988101-71aa-41dc-9a8c-d4538f335604.jpg";
 const CAPETOWN_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/acdb17c2-4cd7-4ffb-af60-5a406c1f94bb.jpg";
+const WATERFRONT_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e9ca5616-786f-4cd2-87ab-0235739e3818.jpg";
+const BOKAAP_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/02e1a9db-2ecf-465e-aa8b-da8d0c1be22d.jpg";
+const PENGUINS_IMG = "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/e4169764-f4bb-4d7f-b6f1-304c79257ed0.jpg";
 
 const NAV_LINKS = ["Главная", "Блог", "Видео", "Галерея", "GeoSafe SA", "Контакты"];
 
@@ -28,6 +31,27 @@ const BLOG_POSTS = [
     date: "20 янв 2026",
     title: "Драконовы горы: трекинг на краю Африки",
     excerpt: "Шесть дней пешком по горному массиву uKhahlamba. Высота, холод и абсолютная дикость — репортаж с маршрута.",
+  },
+  {
+    img: WATERFRONT_IMG,
+    tag: "Кейптаун",
+    date: "10 фев 2026",
+    title: "Набережная V&A Waterfront: сердце Кейптауна",
+    excerpt: "Рестораны, яхты, рынок и вид на Столовую гору — проводник по самому оживлённому месту южноафриканской столицы.",
+  },
+  {
+    img: BOKAAP_IMG,
+    tag: "Кейптаун",
+    date: "5 фев 2026",
+    title: "Бо-Кап: квартал тысячи красок",
+    excerpt: "Пёстрые дома, запах кардамона и история малайских переселенцев. Почему Bo-Kaap — это самая фотогеничная улица Африки.",
+  },
+  {
+    img: PENGUINS_IMG,
+    tag: "Кейптаун",
+    date: "28 янв 2026",
+    title: "Пляж Боулдерс: пингвины в получасе от мегаполиса",
+    excerpt: "Африканские пингвины в дикой природе — звучит невероятно, но это реальность полуострова Кейп-Пойнт. Как добраться и что взять с собой.",
   },
 ];
 
