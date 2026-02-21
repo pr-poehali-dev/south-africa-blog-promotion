@@ -410,14 +410,14 @@ const Index = () => {
                 Инновационная карта-навигатор
               </p>
               <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                Умный ИИ-помощник для путешествий по Южной Африке. GeoSafe SA анализирует маршруты в реальном времени, предупреждает об опасных зонах, рекомендует безопасные дороги и лучшие точки для наблюдения за дикой природой.
+                Современное решение на основе искусственного интеллекта, призванное сделать ваши путешествия по ЮАР безопаснее и комфортнее. Приложение сейчас на стадии тестирования и доработки — чтобы предложить вам максимально качественный продукт.
               </p>
               <div className="space-y-4 mb-10">
                 {[
-                  { icon: "Shield" as const, title: "Безопасность маршрута", desc: "ИИ анализирует криминогенную обстановку и предлагает безопасные альтернативы" },
-                  { icon: "Navigation" as const, title: "Умная навигация", desc: "Офлайн-карты, точки заправок, сафари-лоджи и КПП заповедников" },
-                  { icon: "Binoculars" as const, title: "Дикая природа", desc: "Актуальные данные о миграции животных и лучших точках наблюдения" },
-                  { icon: "Zap" as const, title: "Реальное время", desc: "Дорожные условия, паводки, закрытые дороги — обновления каждые 15 минут" },
+                  { icon: "Shield" as const, title: "Безопасные маршруты", desc: "Карты опасных районов и тауншипов с построением маршрутов в обход них" },
+                  { icon: "Bot" as const, title: "Интеллектуальный помощник", desc: "Голосовой ИИ-ассистент и чат-бот для оперативной помощи в любой ситуации" },
+                  { icon: "Phone" as const, title: "Всегда под рукой", desc: "Быстрый доступ к экстренным службам, такси, аренде авто и многому другому" },
+                  { icon: "Camera" as const, title: "Ваши рекомендации", desc: "Делитесь фото кафе, заповедников, виноделен и достопримечательностей с оценкой" },
                 ].map((f) => (
                   <div key={f.title} className="flex items-start gap-4">
                     <div className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -430,20 +430,48 @@ const Index = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Contribute form teaser */}
+              <div className="bg-primary/10 border border-primary/25 rounded-lg p-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <Icon name="Star" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-heading text-sm font-semibold text-foreground uppercase tracking-wide mb-1">Помогите наполнить навигатор!</div>
+                    <p className="text-xs text-muted-foreground font-body leading-relaxed mb-2">
+                      Присылайте данные о местах: город, улица, название заведения, средний чек, фото, оценка по 5-балльной шкале.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Кафе", "Заповедники", "Виноделни", "Аптеки", "Достопримечательности"].map((tag) => (
+                        <span key={tag} className="text-[10px] bg-background border border-border text-muted-foreground px-2 py-0.5 rounded font-heading uppercase tracking-wide">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Partner teaser */}
+              <div className="bg-muted border border-border rounded-lg p-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <Icon name="Handshake" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-heading text-sm font-semibold text-foreground uppercase tracking-wide mb-1">Ищем партнёров</div>
+                    <p className="text-xs text-muted-foreground font-body leading-relaxed">
+                      Приглашаем такси и аренду авто к сотрудничеству до выхода приложения. В GeoSafe SA предусмотрены рекламные площадки.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://t.me/yoursouthafricachannel"
+                  href="https://t.me/+qvKkxOoiCLZkMWEy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded font-heading font-semibold uppercase tracking-wide text-sm hover:bg-primary/90 transition-all hover:scale-105"
                 >
                   <Icon name="Send" size={15} />
-                  Попробовать в Telegram
+                  Вступить в группу GeoSafe SA
                 </a>
-                <button className="inline-flex items-center gap-2 border border-border text-muted-foreground px-6 py-3 rounded font-heading uppercase tracking-wide text-sm hover:border-primary hover:text-primary transition-colors">
-                  <Icon name="Info" size={15} />
-                  Подробнее
-                </button>
               </div>
             </div>
 
@@ -524,10 +552,10 @@ const Index = () => {
                     </div>
                     <div className="flex-1">
                       <div className="text-xs text-foreground font-body">
-                        <span className="text-primary font-semibold">ИИ GeoSafe:</span> Маршрут через N4 безопасен. Слоны замечены у Phalaborwa Gate 🐘
+                        <span className="text-primary font-semibold">ИИ GeoSafe:</span> Район Alexandra обозначен как опасный. Строю объездной маршрут 🛡️
                       </div>
                       <div className="flex gap-1 mt-1.5">
-                        {["Объехать", "Подробнее", "Сохранить"].map((btn) => (
+                        {["Объехать", "Вызвать такси", "Экстренная помощь"].map((btn) => (
                           <button key={btn} className="text-[10px] bg-background border border-border text-muted-foreground px-2 py-0.5 rounded font-heading uppercase tracking-wide hover:border-primary hover:text-primary transition-colors">
                             {btn}
                           </button>
