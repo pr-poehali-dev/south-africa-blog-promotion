@@ -165,6 +165,9 @@ const Index = () => {
           <p className="mt-6 text-lg md:text-xl text-white/75 font-body max-w-2xl mx-auto leading-relaxed animate-fade-in delay-200">
             Блог об экспедициях, животных и жизни в ЮАР. Сафари, горы, океаны — всё это здесь, из первых рук.
           </p>
+          <p className="mt-3 text-base md:text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed animate-fade-in delay-200">
+            А ещё очень опасная, но с этим вам поможет навигатор GeoSafe SA
+          </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-300">
             <button
               onClick={() => scrollTo("blog")}
