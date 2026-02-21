@@ -299,6 +299,63 @@ const WINERIES = [
   },
 ];
 
+const PARKS = [
+  {
+    img: "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/4f59b378-cbf1-45b5-940e-140eaa223058.jpg",
+    name: "Крюгер",
+    region: "Лимпопо / Мпумаланга",
+    area: "19 485 км²",
+    animals: "Большая пятёрка",
+    badge: "Легенда",
+    desc: "Один из крупнейших и известнейших заповедников мира. Здесь живут все представители Большой пятёрки: слоны, носороги, буйволы, леопарды и львы. Лучший сезон — сухой (май–сентябрь), когда животные собираются у водопоев.",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/8dec05d2-cc06-4c6d-8536-077676f5cc28.jpg",
+    name: "Хлухлуве-Имфолози",
+    region: "КваЗулу-Натал",
+    area: "960 км²",
+    animals: "Белый носорог",
+    badge: "Носороги",
+    desc: "Старейший заповедник Африки, основанный в 1895 году. Именно здесь в XX веке спасли белого носорога от полного вымирания. Сегодня в парке живёт крупнейшая популяция белых носорогов в мире.",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/2afe42b3-ed57-4482-8419-c77acb1ea01a.jpg",
+    name: "Кгалагади",
+    region: "Северный Кейп",
+    area: "38 000 км²",
+    animals: "Чёрная грива льва",
+    badge: "Пустыня",
+    desc: "Трансграничный парк между ЮАР и Ботсваной — второй по величине в Африке. Красные дюны Калахари, знаменитые черногривые львы и огромные стада антилоп гну. Для любителей дикой и нетронутой Африки.",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/12c064d4-4d01-4bcf-a86e-17a5822ae955.jpg",
+    name: "Столовая гора",
+    region: "Западный Кейп",
+    area: "221 км²",
+    animals: "Финбос и пингвины",
+    badge: "ЮНЕСКО",
+    desc: "Национальный парк в черте Кейптауна — один из немногих в мире, расположенных прямо в городе. Включает Столовую гору, мыс Доброй Надежды и пляж с пингвинами. Объект Всемирного наследия ЮНЕСКО.",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/f8554ff6-4d85-43c6-ab6d-47e750355d15.jpg",
+    name: "iSimangaliso",
+    region: "КваЗулу-Натал",
+    area: "3 280 км²",
+    animals: "Бегемоты и крокодилы",
+    badge: "ЮНЕСКО",
+    desc: "Объект Всемирного наследия ЮНЕСКО — уникальное сочетание влажных тропических лесов, озёр, коралловых рифов и пляжей. Здесь живут бегемоты, крокодилы, морские черепахи и сотни видов птиц.",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/6304529a-c8b4-435e-aa43-429aa3c665eb/files/38d6bd19-05c9-48ab-9804-9385f1619d95.jpg",
+    name: "Цицикамма",
+    region: "Восточный Кейп",
+    area: "1 000 км²",
+    animals: "Морские котики и киты",
+    badge: "Океан",
+    desc: "Часть Садового маршрута — лес, спускающийся прямо к бурному океану. Знаменитый подвесной мост над рекой Шторм, маршруты вдоль берега и лучший в ЮАР каньонинг. Идеальное место для активного отдыха.",
+  },
+];
+
 const GALLERY_IMGS = [HERO_IMG, ELEPHANT_IMG, CAPETOWN_IMG, HERO_IMG, ELEPHANT_IMG, CAPETOWN_IMG];
 
 const VIDEOS = [
@@ -541,6 +598,47 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PARKS */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="mb-12">
+          <p className="text-primary font-heading uppercase tracking-widest text-sm mb-3">Дикая природа</p>
+          <h2 className="section-heading font-heading text-4xl md:text-5xl font-bold text-foreground uppercase">
+            Заповедники и парки
+          </h2>
+          <p className="mt-4 text-muted-foreground font-body max-w-xl">Национальные парки ЮАР — одни из лучших в мире. Здесь можно увидеть животных в их естественной среде обитания.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {PARKS.map((park, i) => (
+            <div key={i} className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary transition-colors">
+              <div className="relative h-48 overflow-hidden">
+                <img src={park.img} alt={park.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-heading uppercase tracking-wider px-2.5 py-1 rounded">
+                  {park.badge}
+                </div>
+                <div className="absolute bottom-3 left-3 right-3">
+                  <h3 className="font-heading font-bold text-white uppercase text-lg leading-tight">{park.name}</h3>
+                  <p className="text-white/70 text-xs font-body">{park.region}</p>
+                </div>
+              </div>
+              <div className="p-4">
+                <div className="flex gap-4 mb-3">
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-body">
+                    <Icon name="Maximize2" size={11} className="text-primary" />
+                    {park.area}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-body">
+                    <Icon name="Footprints" size={11} className="text-primary" />
+                    {park.animals}
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground font-body leading-relaxed">{park.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
