@@ -23,23 +23,7 @@ const buildPhoto = (id: string, cat: string, title: string) => ({
 
 const PHOTOS: ReturnType<typeof buildPhoto>[] = [];
 
-function buildExtended(): typeof PHOTOS {
-  const extended = [...PHOTOS];
-  let idx = 0;
-  while (extended.length < 200) {
-    const base = PHOTOS[idx % PHOTOS.length];
-    extended.push({
-      ...base,
-      id: base.id + "-" + Math.floor(idx / PHOTOS.length),
-      src: base.src.replace("w=800", `w=${800 + (idx % 5) * 10}`),
-      thumb: base.thumb.replace("w=400", `w=${400 + (idx % 5) * 5}`),
-    });
-    idx++;
-  }
-  return extended;
-}
-
-const ALL_PHOTOS = buildExtended();
+const ALL_PHOTOS = PHOTOS;
 
 const PAGE_SIZE = 48;
 
